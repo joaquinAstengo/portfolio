@@ -2,7 +2,7 @@
   "name": "port",
   "version": "0.1.0",
   "private": true,
-  "homapage": "https://joaquinastengo.github.io/portfolio",
+  "homapage": "http://joaquinastengo.github.io/portfolio",
   "dependencies": {
     "@iconscout/react-unicons": "^1.1.6",
     "@testing-library/jest-dom": "^5.16.3",
@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npmrun build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
