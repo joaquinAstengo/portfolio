@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header"
+import NavBar from "./components/NavBar"
+import Skills from "./components/Skills"
+import AboutMe from "./components/AboutMe"
+import Footer from "./components/Footer"
+import Projects from "./components/Projects"
+import Hamburguer from "./components/Hamburguer"
+import { useEffect, useState } from "react"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const initialWidth = window.innerWidth
+  const [width, setWidth] = useState(initialWidth)
+  const handleResize = () => {
+    setWidth(window.innerWidth)
+  }
+  const [burguer, setBurguer] = useState(false)
 
-export default App;
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+  }, [])
+
+
+  return (
+    <>
+      {
+        width > '767' ? (<NavBar></NavBar>) : (<Hamburguer burguer={burguer} setBurguer={setBurguer}></Hamburguer>)
+      }
+      <Header ></Header>
+      <main>
+        <AboutMe></AboutMe>
+        <Skills></Skills>
+
+          <Projects></Projects>
+      </main>
+      <Footer></Footer>
+    </>
+  )
+}
+export default App
