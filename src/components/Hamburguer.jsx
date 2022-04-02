@@ -1,5 +1,4 @@
 import React from 'react'
-import HamburguerIcon from '../img/menu.png';
 
 
 const Hamburguer = ({ burguer, setBurguer }) => {
